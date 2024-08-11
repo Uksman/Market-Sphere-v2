@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "com.uksdev.market-sphere",
-    "icon": "./assets/mks-logo.png",
+    "icon": "./assets/ic_launcher_foreground.png",
     "userInterfaceStyle": "light",
     "plugins": [
       [
@@ -16,7 +16,7 @@
       ]
     ],
     "splash": {
-      "image": "./assets/mks-logo.png",
+      "image": "./assets/ic_launcher.png",
       "resizeMode": "contain",
       "backgroundColor": "#CC4400"
     },
@@ -25,12 +25,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/mks-logo.png",
+        "foregroundImage": "./assets/ic_launcher_foreground.png",
         "backgroundColor": "#CC4400"
       }
     },
     "web": {
-      "favicon": "./assets/mks-logo.png"
+      "favicon": "./assets/ic_launcher_monochrome.png"
     }
   }
 }

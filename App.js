@@ -5,8 +5,18 @@ import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 // import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./src/Navigation/BottomTabNavigation";
 import StackNavigation from "./src/Navigation/StackNavigation";
+import { useFonts } from "expo-font";
 
 export default function App() {
+  const [fontsloaded] = useFonts({
+    Poppins: require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
+    "Poppins-Bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
+    "Poppins-semi": require("./assets/fonts/Poppins/Poppins-SemiBold.ttf"),
+  });
+  if (!fontsloaded) {
+    return null;
+  }
+
   return (
     <ClerkProvider
       className="bg-white flex-1"

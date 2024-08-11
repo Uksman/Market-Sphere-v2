@@ -13,6 +13,7 @@ const ProfileScreen = () => {
   if (!isLoaded) {
     return null;
   }
+
   const goToEditProfile = () => {};
   const goToMyItem = () => {
     navigation.navigate("MyItems");
@@ -30,7 +31,9 @@ const ProfileScreen = () => {
   const goToRecent = () => {
     console.log("recents");
   };
-  const goToSettings = () => {};
+  const goToSettings = () => {
+    navigation.navigate("Settings");
+  };
   const goToHelpCenter = () => {};
   const goTosignOut = () => {
     signOut(navigation.replace("Login"));
@@ -38,25 +41,25 @@ const ProfileScreen = () => {
 
   const profileItems = [
     { icon: "manage-accounts", text: "Account", action: goToEditProfile },
-    { icon: "box", text: "My Items", action: goToMyItem },
+    { icon: "help", text: "My Items", action: goToMyItem },
     { icon: "my-location", text: "Manage Address", action: goToManageAddress },
     { icon: "favorite", text: "Saved Items", action: goToInbox },
-    { icon: "gift", text: "Voucher", action: goToVocher },
-    { icon: "user-follow", text: "Follow Seller", action: goToFollowSeller },
-    { icon: "eye", text: "Recently Viewed", action: goToRecent },
+    { icon: "help", text: "Voucher", action: goToVocher },
+    { icon: "help", text: "Follow Seller", action: goToFollowSeller },
+    { icon: "help", text: "Recently Viewed", action: goToRecent },
     { icon: "settings", text: "Settings", action: goToSettings },
-    { icon: "customerservice", text: "Help Center", action: goToHelpCenter },
+    { icon: "help", text: "Help Center", action: goToHelpCenter },
     { icon: "power-settings-new", text: "LogOut", action: goTosignOut },
   ];
 
   const renderItems = ({ icon, text, action }) => {
     return (
-      <View className="border-gray-500 border-b">
+      <View className="border-gray-300 border-b p-4">
         <TouchableOpacity
-          className="items-center flex-1 p-3 flex-row"
+          className="items-center flex-1 justify-between flex-row"
           onPress={action}
         >
-          <View className="flex-row items-center gap-2">
+          <View className="flex-row items-center gap-5">
             <MaterialIcons name={icon} size={24} color="rgb(255,89,9)" />
             <Text>{text}</Text>
           </View>
@@ -72,12 +75,19 @@ const ProfileScreen = () => {
   return (
     <ScrollView className="bg-white py-10 flex-1">
       <View className="">
-        <TouchableOpacity className="p-3 rounded-full">
-          <MaterialIcons name="arrow-left" size={24} color="rgb(255,89,9)" />
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          className="px-2 rounded-full"
+        >
+          <MaterialIcons
+            name="keyboard-arrow-left"
+            size={35}
+            color="rgb(255,89,9)"
+          />
         </TouchableOpacity>
-        <Text className="font-bold text-lg">Profile</Text>
+        <Text className="font-bold text-center text-xl mb-10">Profile</Text>
       </View>
-      <View className="p-3 items-center">
+      <View className="p-3 mb-4 items-center">
         <View className="">
           <Image
             className="w-20 h-20 rounded-full"

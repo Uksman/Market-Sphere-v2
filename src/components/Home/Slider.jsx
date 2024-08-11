@@ -7,13 +7,13 @@ const Slider = ({ sliderList }) => {
   const width = Dimensions.get("screen").width;
 
   return (
-    <View className="mt-2 bg-white">
+    <View className="mt-1">
       <Text className="mt-3 mx-4 font-semibold text-lg">
         #Special Offers for you
       </Text>
       <Carousel
         loop
-        width={width}
+        width={435}
         height={width / 2}
         autoPlay={true}
         mode="parallax"

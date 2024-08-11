@@ -60,8 +60,19 @@ const MyItems = () => {
       />
     );
   }
+
+  if (!myitemList.length > 0) {
+    return (
+      <View className="items-center justify-center flex-1">
+        <Text className="text-lg font-semibold text-slate-400">
+          Sorry You dont have any Item
+        </Text>
+      </View>
+    );
+  }
+
   return (
-    <View>
+    <View className="flex-1 bg-white">
       <Text>MyItems</Text>
       <LatestItem latestItemList={myitemList} />
     </View>

@@ -10,11 +10,11 @@ const Category = ({ categoryList }) => {
   };
 
   return (
-    <View className="py-5 px-1 bg-white">
-      <View className="flex-row rounded-t-md  items-center p-4 justify-between">
+    <View className="py-3 px-1">
+      <View className="flex-row rounded-t-md  items-center p-5 justify-between">
         <Text className="font-bold text-xl">Category</Text>
-        <TouchableOpacity onPress={() => viewAll()} className="flex-shrink-0">
-          <Text className="text-md text-gray-400">See All</Text>
+        <TouchableOpacity onPress={() => viewAll()} className="">
+          <Text className="text-md font-semibold text-orange-600">See All</Text>
         </TouchableOpacity>
       </View>
       <FlatList
@@ -31,7 +31,7 @@ const Category = ({ categoryList }) => {
               className="flex-1 items-center justify-center"
             >
               <View className="rounded-full items-center justify-center w-16 h-16 bg-slate-200">
-                <Image className="h-10 w-10" source={{ uri: item?.icon }} />
+                <Image className="h-8 w-8" source={{ uri: item?.icon }} />
               </View>
               <Text className="font-medium pt-2">{item.name}</Text>
             </TouchableOpacity>

@@ -7,6 +7,7 @@ import ItemList from "../screens/ItemByCategoryScreen/ItemList";
 import ItemDetails from "../screens/ItemDetailsScreen/ItemDetails";
 import MyItems from "../screens/MyItemsScreen/MyItems";
 import AllCategory from "../screens/AllCategoryScreen/AllCategory";
+import Settings from "../screens/SettingsScreen/Settings";
 
 const Stack = createNativeStackNavigator();
 
@@ -76,6 +77,7 @@ const AppNavigation = ({}) => {
           name="AllCategory"
           component={AllCategory}
         />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );

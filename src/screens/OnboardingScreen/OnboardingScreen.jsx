@@ -13,13 +13,11 @@ const OnboardingScreen = () => {
   const dotComponent = ({ selected }) => {
     return (
       <View
-        className={`w-3 ml-1 mb-32 h-3 flex items-center justify-center rounded-full ${
-          selected ? "border border-orange-600 " : ""
-        }`}
+        className={`w-3 ml-1 mb-32 h-3 flex items-center justify-center rounded-full`}
       >
         <View
           className={`w-3 h-3 rounded-full items-center flex justify-center ${
-            selected ? "bg-orange-600" : "bg-orange-300"
+            selected ? "bg-orange-600 w-4" : "bg-slate-300"
           }`}
         ></View>
       </View>
@@ -31,7 +29,7 @@ const OnboardingScreen = () => {
         {...props}
         className="w-24 flex items-center justify-center mt-16 p-3 mx-5"
       >
-        <Text className="text-orange-100 font-semibold text-lg">Skip</Text>
+        <Text className="text-slate-300 font-semibold text-lg">Skip</Text>
       </TouchableOpacity>
     );
   };
