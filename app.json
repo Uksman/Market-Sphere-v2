@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "market-sphere",
+    "slug": "market-sphere",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "com.uksdev.market-sphere",
+    "icon": "./assets/mks-logo.png",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
+    "splash": {
+      "image": "./assets/mks-logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#CC4400"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/mks-logo.png",
+        "backgroundColor": "#CC4400"
+      }
+    },
+    "web": {
+      "favicon": "./assets/mks-logo.png"
+    }
+  }
+}
