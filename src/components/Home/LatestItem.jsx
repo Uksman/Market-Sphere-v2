@@ -14,8 +14,8 @@ const LatestItem = ({ latestItemList, header }) => {
   const navigation = useNavigation();
 
   return (
-    <View className="py-4 px-4 bg-white">
-      <Text className="font-bold pl-2 pb-2 text-xl">{header}</Text>
+    <View className="py-4 px-4">
+      <Text className="font-[Poppins-Bold] pl-2 pb-2 text-xl">{header}</Text>
       <FlatList
         data={latestItemList}
         numColumns={2}

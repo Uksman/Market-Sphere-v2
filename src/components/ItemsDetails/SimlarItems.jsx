@@ -10,7 +10,7 @@ import {
 import { app } from "../../../firebaseConfig";
 import Carousel from "react-native-reanimated-carousel";
 
-const SimlarItems = ({ currentItemCategory, currentItemID }) => {
+const SimlarItems = ({ currentItemCategory }) => {
   const width = Dimensions.get("screen").width;
   const [simlarItem, setSimlarItem] = useState([]);
   const db = getFirestore(app);
@@ -23,21 +23,22 @@ const SimlarItems = ({ currentItemCategory, currentItemID }) => {
     setSimlarItem([]);
     const q = query(
       collection(db, "userPost"),
-      where("category", "==", currentItemCategory),
-      where("id", "!=", currentItemID)
+      where("category", "==", currentItemCategory)
     );
     const snapshot = await getDocs(q);
     const Items = [];
     snapshot.forEach((doc) => {
       Items.push(doc.data());
+      console.log("This is the doc data:", doc.data()); // Debugging output
     });
+    console.log("This is the Fetched items:", Items); // Debugging output
     setSimlarItem(Items);
   };
   return (
     <View className="mt-5">
-      <Text className="font-bold text-lg">You may also like</Text>
+      <Text className="font-[Poppins-semi] text-lg">You may also like</Text>
       <Carousel
-        // loop
+        loop
         width={width}
         height={width / 2}
         // autoPlay={true}

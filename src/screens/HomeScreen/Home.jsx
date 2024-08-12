@@ -30,7 +30,7 @@ const Home = () => {
   };
 
   return (
-    <ScrollView className="bg-white flex-1">
+    <ScrollView className="flex-1">
       {/* header component*/}
       <Header />
       {/* Slider component*/}

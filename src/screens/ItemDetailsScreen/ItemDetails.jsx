@@ -35,7 +35,6 @@ const ItemDetails = ({ navigation }) => {
   const nav = useNavigation();
 
   useEffect(() => {
-    console.log(params);
     setItem(params.item || {});
     shareBtn();
   }, [params, navigation]);
@@ -130,21 +129,23 @@ const ItemDetails = ({ navigation }) => {
       <Image className="w-full h-96" source={{ uri: item.image }} />
       <View className="p-5 mt-[-20px] bg-white rounded-t-3xl shadow-2xl">
         <View className="my-2 flex-row justify-between">
-          <Text className="text-[#797979] font-semibold">{item.category}</Text>
+          <Text className="text-[#797979] font-[Poppins-md]">
+            {item.category}
+          </Text>
           <MaterialIcons
             name="favorite-outline"
             size={24}
             color="rgb(255,89,9)"
           />
         </View>
-        <Text className="text-2xl font-bold">{item.title}</Text>
+        <Text className="text-2xl font-[Poppins-semi]">{item.title}</Text>
         <Text className="font-medium mt-3 text-lg">${item.price}</Text>
 
-        <Text className="mt-4 font-bold text-lg">Description</Text>
-        <Text className="my-4 mb-10 ">{item.desc}</Text>
+        <Text className="mt-4 font-[Poppins-semi] text-lg">Description</Text>
+        <Text className="my-4 mb-10 font-[Poppins]">{item.desc}</Text>
 
         {/* user who posted */}
-        <Text className="font-semibold mb-2 text-lg">Seller</Text>
+        <Text className="font-[Poppins-semi] mb-2 text-lg">Seller</Text>
         <View className="flex-row items-center justify-between">
           <View className="flex flex-row gap-3">
             <Image
@@ -152,8 +153,10 @@ const ItemDetails = ({ navigation }) => {
               source={{ uri: item.userImage }}
             />
             <View>
-              <Text className=" text- font-bold">{item.userName}</Text>
-              <Text className="text-gray-400 text-sm">{item.userEmail}</Text>
+              <Text className="font-[Poppins-semi]">{item.userName}</Text>
+              <Text className="text-gray-400 font-[Poppins-semi] text-sm">
+                {item.userEmail}
+              </Text>
             </View>
           </View>
           {user.primaryEmailAddress.emailAddress == item.userEmail ? (
@@ -189,14 +192,11 @@ const ItemDetails = ({ navigation }) => {
         {/* this is the similar items section */}
         <SimlarItems
           currentItemCategory={item.category}
-          currentItemID={item.id}
+          currentItemID={item?.id}
         />
         {/* More of the seller items section */}
 
-        <MoreSellerItems
-          moreSellerItems={item.userEmail}
-          currentItemID={item.id}
-        />
+        <MoreSellerItems moreSellerItems={item.userEmail} />
       </View>
     </ScrollView>
   );

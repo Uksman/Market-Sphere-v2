@@ -11,6 +11,7 @@ export default function App() {
   const [fontsloaded] = useFonts({
     Poppins: require("./assets/fonts/Poppins/Poppins-Regular.ttf"),
     "Poppins-Bold": require("./assets/fonts/Poppins/Poppins-Bold.ttf"),
+    "Poppins-md": require("./assets/fonts/Poppins/Poppins-Medium.ttf"),
     "Poppins-semi": require("./assets/fonts/Poppins/Poppins-SemiBold.ttf"),
   });
   if (!fontsloaded) {
@@ -19,10 +20,10 @@ export default function App() {
 
   return (
     <ClerkProvider
-      className="bg-white flex-1"
+      className=""
       publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
-      <View className="flex-1 bg-white">
+      <View className="flex-1">
         <StatusBar style="auto" />
         {/* <SignedIn>
           <AppNavigation />

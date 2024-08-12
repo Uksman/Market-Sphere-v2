@@ -20,6 +20,7 @@
     "@react-navigation/native-stack": "^6.11.0",
     "@types/react": "~18.2.79",
     "@types/react-native-onboarding-swiper": "^1.1.9",
+    "eas-cli": "^10.2.2",
     "expo": "^51.0.26",
     "expo-av": "^14.0.6",
     "expo-image-picker": "~15.0.7",

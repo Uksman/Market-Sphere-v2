@@ -16,7 +16,7 @@
       ]
     ],
     "splash": {
-      "image": "./assets/ic_launcher.png",
+      "image": "./assets/ic_launcher_monochrome.png",
       "resizeMode": "contain",
       "backgroundColor": "#CC4400"
     },
@@ -27,10 +27,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/ic_launcher_foreground.png",
         "backgroundColor": "#CC4400"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.uksdev2323.marketsphere"
     },
     "web": {
       "favicon": "./assets/ic_launcher_monochrome.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "23bf7db5-efab-468f-98bd-52c8d338a640"
+      }
     }
   }
 }

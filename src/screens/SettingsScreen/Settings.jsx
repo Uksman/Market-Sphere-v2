@@ -5,10 +5,12 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 const Settings = () => {
   const navigation = useNavigation();
+
+  const notificationSettings = () => {};
   const goToMyItem = () => {
     navigation.navigate("MyItems");
   };
-  const goToManageAddress = () => {};
+  const goToLanguage = () => {};
   const goToInbox = () => {
     console.log("Inbox");
   };
@@ -23,10 +25,10 @@ const Settings = () => {
     {
       icon: "manage-accounts",
       text: "Notification Settings",
-      action: goToEditProfile,
+      action: notificationSettings,
     },
     { icon: "help", text: "Theme", action: goToMyItem },
-    { icon: "my-location", text: "Language", action: goToManageAddress },
+    { icon: "my-location", text: "Language", action: goToLanguage },
     { icon: "favorite", text: "Clear Cache", action: goToInbox },
     { icon: "help", text: "Delete Account", action: goToVocher },
     { icon: "help", text: "Follow Seller", action: goToFollowSeller },
